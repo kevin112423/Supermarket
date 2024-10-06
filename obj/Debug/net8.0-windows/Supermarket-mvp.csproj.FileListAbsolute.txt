@@ -3,7 +3,6 @@ C:\Users\kgomez\source\repos\Supermarket-mvp\bin\Debug\net8.0-windows\Supermarke
 C:\Users\kgomez\source\repos\Supermarket-mvp\bin\Debug\net8.0-windows\Supermarket-mvp.runtimeconfig.json
 C:\Users\kgomez\source\repos\Supermarket-mvp\bin\Debug\net8.0-windows\Supermarket-mvp.dll
 C:\Users\kgomez\source\repos\Supermarket-mvp\bin\Debug\net8.0-windows\Supermarket-mvp.pdb
-C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Form1.resources
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.csproj.GenerateResource.cache
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.AssemblyInfoInputs.cache
@@ -14,3 +13,6 @@ C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\refint\Sup
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.pdb
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.genruntimeconfig.cache
 C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\ref\Supermarket-mvp.dll
+C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.view.PayModeView.resources
+C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket-mvp.sourcelink.json
+C:\Users\kgomez\source\repos\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Properties.Resources.resources
