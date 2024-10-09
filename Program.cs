@@ -2,6 +2,7 @@ using Supermarket_mvp._repository;
 using Supermarket_mvp.model;
 using Supermarket_mvp.view;
 using Supermarket_mvp.Properties;
+using Supermarket_mvp.Presenters;
 
 namespace Supermarket_mvp
 {
@@ -17,9 +18,9 @@ namespace Supermarket_mvp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectString = Settings.Default.SqlConnection;
-            IPayModeView view = new PayModeView();
-            IPayModeRepository reposity = new PayModeRepository(sqlConnectString);
-            Application.Run(new PayModeView());
+            IMainView view = new MainView();
+            new MainPresenter(view, sqlConnectString);
+            Application.Run((Form)view);
         }
     }
 }
