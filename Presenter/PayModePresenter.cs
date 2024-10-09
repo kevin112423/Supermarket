@@ -30,13 +30,24 @@ namespace Supermarket_mvp.Presenter
 
             this.view.SetPayModeListBildingSource(PayModeBindingSource);
 
-             Load
+            LoadAllPayModeList();
+            this.view.Show();
         }
-           
+
+        private void LoadAllPayModeList()
+        {
+            payModeList = repository.GetAll();
+            PayModeBindingSource.DataSource = payModeList;
+        }
 
         private void SearchPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            bool emptyValue = string.IsNullOrEmpty(this.view.SearchValue);
+            if (emptyValue == false)
+            {
+                payModeList = repository.GetByValue(this.view.SearchValue);
+            }
+            PayModeBindingSource.DataSource = payModeList;
         }
 
         private void CancelPayMode(object? sender, EventArgs e)
@@ -64,5 +75,5 @@ namespace Supermarket_mvp.Presenter
             throw new NotImplementedException();
         }
     }
-    }
-}
+ }
+

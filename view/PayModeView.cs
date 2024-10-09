@@ -12,6 +12,8 @@ namespace Supermarket_mvp.view
 {
     public partial class PayModeView : Form, IPayModeView
     {
+        private bool isEdit;
+
         public string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string PayModeObservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -78,7 +80,6 @@ namespace Supermarket_mvp.view
         {
             dataGridView1.DataSource = PayModeList;
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
