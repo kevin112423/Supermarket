@@ -43,7 +43,54 @@ namespace Supermarket_mvp.view
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+            BtnNew.Click += delegate 
+            {
+                AddNewEvent?.Invoke(this,EventArgs.Empty);
 
+                tabControl1.TabPages.Remove(PagePayModeList);
+                tabControl1.TabPages.Add(PagePayModeDetail);
+                PagePayModeDetail.Text = "Add New Pay Mode";
+            };
+
+            BtnEdit.Click +=delegate 
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(PagePayModeList);
+                tabControl1.TabPages.Add(PagePayModeDetail);
+                PagePayModeDetail.Text = "Edit Pay Mode";
+
+            };
+            BtnDelete.Click += delegate
+            {
+                
+                var result = MessageBox.Show("are you sure you want  to delete the selected pay mode",
+                             "Warning",
+                              MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            BtnSave.Click += delegate 
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (IsSuccessful)
+                {
+                    tabControl1.TabPages.Remove(PagePayModeList);
+                    tabControl1.TabPages.Add(PagePayModeDetail);
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancel.Click += delegate 
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(PagePayModeList);
+                tabControl1.TabPages.Add(PagePayModeDetail);
+
+            };
         }
 
         public event EventHandler SearchEvent;
