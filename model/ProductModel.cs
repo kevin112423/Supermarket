@@ -13,11 +13,6 @@ namespace Supermarket_mvp.model
         [DisplayName("Product Id")]
         public int Id { get; set; }
 
-        [DisplayName("Product Name")]
-        [Required(ErrorMessage ="Product  name is required")]
-        [StringLength(50, MinimumLength = 3 , ErrorMessage ="Product  name the must  be between 3 and 50  characters ")]
-        public string Name { get; set; }
-
         [DisplayName("Product Firt_Name")]
         [Required(ErrorMessage = "Product  firt_name is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
@@ -39,6 +34,6 @@ namespace Supermarket_mvp.model
         [DisplayName("Product Email")]
         [Required(ErrorMessage = "Product  Email is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
-        public double Email { get; set; }
+        public string Email { get; set; }
     }
 }

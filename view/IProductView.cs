@@ -9,13 +9,11 @@ namespace Supermarket_mvp.view
     internal interface IProductView
     {
         string ProductId { get; set; }
-        string ProductName { get; set; }
-        string ProductObservation { get; set; }
         string ProductFirt_name { get; set; }
         string ProductLast_name { get; set; }
         string ProductAddress { get; set; }
-        int ProductPhone { get; set; }
-        double ProductEmail { get; set; }
+        string ProductPhone { get; set; }
+        string ProductEmail { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -29,7 +27,7 @@ namespace Supermarket_mvp.view
         event EventHandler CancelEvent;
         event EventHandler EditEvent;
 
-        void SetPayModeListBildingSource(BindingSource PayModeList);
+        void SetPayModeListBildingSource(BindingSource ProductList);
 
         void Show();
     }

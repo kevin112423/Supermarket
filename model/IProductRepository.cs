@@ -8,11 +8,11 @@ namespace Supermarket_mvp.model
 {
     internal interface IProductRepository
     {
-        void Add(PayModeModel payModeModel);
-        void Edit(PayModeModel payModeModel);
-        void Delete(PayModeModel payModeModel);
+        void Add(ProductModel productModel);
+        void Edit(ProductModel productModel);
+        void Delete(ProductModel productModel);
 
-        IEnumerable<PayModeModel> GetAll();
-        IEnumerable<PayModeModel> GetByValue(String value);
+        IEnumerable<ProductModel> GetAll();
+        IEnumerable<ProductModel> GetByValue(String value);
     }
 }
