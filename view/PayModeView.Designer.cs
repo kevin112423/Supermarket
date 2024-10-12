@@ -220,6 +220,7 @@
             BtnCancel.Size = new Size(148, 51);
             BtnCancel.TabIndex = 7;
             BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.Click += BtnCancel_Click;
             // 
             // BtnSave
             // 

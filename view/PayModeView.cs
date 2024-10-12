@@ -194,5 +194,10 @@ namespace Supermarket_mvp.view
         {
 
         }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
