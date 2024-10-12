@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.view
 {
-    public partial class MainView : Form,IMainView
+    public partial class MainView : Form, IMainView
     {
         public MainView()
         {
@@ -29,6 +29,11 @@ namespace Supermarket_mvp.view
         }
 
         private void MainView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
         {
 
         }

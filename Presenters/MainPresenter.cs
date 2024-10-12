@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Supermarket_mvp._repository;
 using Supermarket_mvp.model;
-using Supermarket_mvp.Presenter;
+using Supermarket_mvp.Presenters;
 using Supermarket_mvp.view;
 
 namespace Supermarket_mvp.Presenters

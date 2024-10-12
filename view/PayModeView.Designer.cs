@@ -124,6 +124,7 @@
             BtnCerrar.Size = new Size(147, 50);
             BtnCerrar.TabIndex = 7;
             BtnCerrar.UseVisualStyleBackColor = true;
+            BtnCerrar.Click += BtnCerrar_Click;
             // 
             // BtnEdit
             // 
@@ -205,7 +206,7 @@
             PagePayModeDetail.Location = new Point(4, 24);
             PagePayModeDetail.Name = "PagePayModeDetail";
             PagePayModeDetail.Padding = new Padding(3);
-            PagePayModeDetail.Size = new Size(789, 351);
+            PagePayModeDetail.Size = new Size(964, 376);
             PagePayModeDetail.TabIndex = 1;
             PagePayModeDetail.Text = " Pay Mode Detail";
             PagePayModeDetail.UseVisualStyleBackColor = true;

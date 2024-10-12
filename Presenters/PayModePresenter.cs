@@ -8,7 +8,7 @@ using Supermarket_mvp.model;
 using Supermarket_mvp.Presenters.Common;
 
 
-namespace Supermarket_mvp.Presenter
+namespace Supermarket_mvp.Presenters
 {
     internal class PayModePresenter
     {
@@ -19,7 +19,7 @@ namespace Supermarket_mvp.Presenter
 
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
         {
-            this.PayModeBindingSource = new BindingSource();
+            PayModeBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
 
@@ -44,10 +44,10 @@ namespace Supermarket_mvp.Presenter
 
         private void SearchPayMode(object? sender, EventArgs e)
         {
-            bool emptyValue = string.IsNullOrEmpty(this.view.SearchValue);
+            bool emptyValue = string.IsNullOrEmpty(view.SearchValue);
             if (emptyValue == false)
             {
-                payModeList = repository.GetByValue(this.view.SearchValue);
+                payModeList = repository.GetByValue(view.SearchValue);
             }
             PayModeBindingSource.DataSource = payModeList;
         }
@@ -59,11 +59,11 @@ namespace Supermarket_mvp.Presenter
 
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
-            var payModel = (PayModeModel) PayModeBindingSource.Current;
+            var payModel = (PayModeModel)PayModeBindingSource.Current;
 
-            view.PayModeId =payModel .Id .ToString();
-            view.PayModeName = payModel .Name .ToString();
-            view.PayModeObservation = payModel .Observation .ToString();    
+            view.PayModeId = payModel.Id.ToString();
+            view.PayModeName = payModel.Name.ToString();
+            view.PayModeObservation = payModel.Observation.ToString();
         }
 
         private void DeleteSelectedPayMode(object? sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace Supermarket_mvp.Presenter
 
             try
             {
-                new Presenters.Common.ModelDataValidation().Validate(payMode);
+                new Common. ModelDataValidation().Validate(payMode);
                 if (view.IsEdit)
                 {
                     repository.Edit(payMode);
@@ -100,9 +100,9 @@ namespace Supermarket_mvp.Presenter
             {
                 view.IsSuccessful = false;
                 view.Message = ex.Message;
-            } 
-               
-            
+            }
+
+
         }
 
         private void CleanViewFields()
@@ -118,5 +118,5 @@ namespace Supermarket_mvp.Presenter
             view.IsEdit = false;
         }
     }
- }
+}
 

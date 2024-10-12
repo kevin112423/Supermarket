@@ -14,14 +14,6 @@ namespace Supermarket_mvp.view
     {
         private bool isEdit;
 
-        public string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PayModeObservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsSuccessful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public PayModeView()
         {
             InitializeComponent();
@@ -34,7 +26,7 @@ namespace Supermarket_mvp.view
 
         private void AssociativeAndRaiseViewEvents()
         {
-            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty);};
+            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
 
             TxtSearch.KeyDown += (s, e) =>
             {
@@ -43,16 +35,16 @@ namespace Supermarket_mvp.view
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
-            BtnNew.Click += delegate 
+            BtnNew.Click += delegate
             {
-                AddNewEvent?.Invoke(this,EventArgs.Empty);
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(PagePayModeList);
                 tabControl1.TabPages.Add(PagePayModeDetail);
                 PagePayModeDetail.Text = "Add New Pay Mode";
             };
 
-            BtnEdit.Click +=delegate 
+            BtnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tabControl1.TabPages.Remove(PagePayModeList);
@@ -62,7 +54,7 @@ namespace Supermarket_mvp.view
             };
             BtnDelete.Click += delegate
             {
-                
+
                 var result = MessageBox.Show("are you sure you want  to delete the selected pay mode",
                              "Warning",
                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -72,18 +64,18 @@ namespace Supermarket_mvp.view
                     MessageBox.Show(Message);
                 }
             };
-            BtnSave.Click += delegate 
+            BtnSave.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
 
-                if (IsSuccessful)
+                if (isSuccessful)
                 {
                     tabControl1.TabPages.Remove(PagePayModeList);
                     tabControl1.TabPages.Add(PagePayModeDetail);
                 }
                 MessageBox.Show(Message);
             };
-            BtnCancel.Click += delegate 
+            BtnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
 
@@ -129,13 +121,55 @@ namespace Supermarket_mvp.view
         {
             dataGridView1.DataSource = PayModeList;
         }
+        public string PayModeId
+        {
+            get { return TxtPayModeId.Text; }
+            set { TxtPayModeId.Text = value; }
+        }
+
+        public string PayModeName
+        {
+            get { return TxtPayModeName.Text; }
+            set { TxtPayModeName.Text = value; }
+        }
+        public string PayModeObservation
+        {
+            get { return TxtPayModeObservation.Text; }
+            set { TxtPayModeObservation.Text = value; }
+        }
+        public string SearchValue
+        {
+            get { return TxtSearch.Text; }
+            set { TxtSearch.Text = value; }
+        }
+
+        public bool IsEdit
+        {
+            get { return isEdit; }
+            set { isEdit = value; }
+        }
+
+        public bool IsSuccessful
+        {
+            get { return isSuccessful; }
+            set { isSuccessful = value; }
+        }
+
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
         private static PayModeView instance;
+        private bool isSuccessful;
+        private string message;
 
-        public static PayModeView GetInstance(Form  parentContainer)
+        public static PayModeView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
@@ -154,6 +188,11 @@ namespace Supermarket_mvp.view
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

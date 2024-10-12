@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnNew = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnNew = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,6 +46,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(183, 491);
             panel1.TabIndex = 0;
+            // 
+            // BtnNew
+            // 
+            BtnNew.BackgroundImage = Properties.Resources.cerrar_con_llave;
+            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnNew.Dock = DockStyle.Bottom;
+            BtnNew.Location = new Point(0, 413);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(183, 78);
+            BtnNew.TabIndex = 2;
+            BtnNew.UseVisualStyleBackColor = true;
+            BtnNew.Click += BtnNew_Click;
             // 
             // BtnPayMode
             // 
@@ -67,17 +79,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // BtnNew
-            // 
-            BtnNew.BackgroundImage = Properties.Resources.cerrar_con_llave;
-            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnNew.Dock = DockStyle.Bottom;
-            BtnNew.Location = new Point(0, 413);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(183, 78);
-            BtnNew.TabIndex = 2;
-            BtnNew.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
