@@ -126,7 +126,7 @@
             tabProductList.Padding = new Padding(3);
             tabProductList.Size = new Size(792, 368);
             tabProductList.TabIndex = 0;
-            tabProductList.Text = "Product List";
+            tabProductList.Text = "CUstomers List";
             tabProductList.UseVisualStyleBackColor = true;
             // 
             // BtnCerrar
@@ -180,9 +180,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(28, 16);
             label2.Name = "label2";
-            label2.Size = new Size(49, 15);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 2;
-            label2.Text = "Product";
+            label2.Text = "Customers";
             // 
             // BtnSearch
             // 
@@ -225,7 +225,7 @@
             tabProductDetail.Padding = new Padding(3);
             tabProductDetail.Size = new Size(792, 368);
             tabProductDetail.TabIndex = 1;
-            tabProductDetail.Text = "Product Detail";
+            tabProductDetail.Text = "Customrs Detail";
             tabProductDetail.UseVisualStyleBackColor = true;
             // 
             // label10
