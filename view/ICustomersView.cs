@@ -9,7 +9,7 @@ namespace Supermarket_mvp.view
     internal interface ICustomersView
     {
         string CustomersId { get; set; }
-        string CustomersFirt_name { get; set; }
+        string CustomersFirst_name { get; set; }
         string CustomersLast_name { get; set; }
         string CustomersDocument { get; set; }
         string CustomersAddress { get; set; }

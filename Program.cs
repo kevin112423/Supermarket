@@ -20,7 +20,7 @@ namespace Supermarket_mvp
             string sqlConnectString = Settings.Default.SqlConnection;
             IMainView view = new MainView();
             new MainPresenter(view, sqlConnectString);
-            Application.Run((Form)view);
+            Application.Run((Form)view); 
         }
     }
 }

@@ -19,17 +19,65 @@ namespace Supermarket_mvp._repository
 
         public void Add(CustomersModel customersModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Customers VALUES (@Lastname, @Firstname, @Doc_num, @Address, @Phone, @Email, @Birtday   )";
+                command.Parameters.Add("@Lastname", SqlDbType.NVarChar).Value = customersModel.Last_name;
+                command.Parameters.Add("@Firstname", SqlDbType.NVarChar).Value = customersModel.First_name;
+                command.Parameters.Add("@Doc_num", SqlDbType.NVarChar).Value = customersModel.Doc_num;
+                command.Parameters.Add("@Address" , SqlDbType.NVarChar).Value=customersModel.Address;
+                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value=customersModel.Phone;
+                command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = customersModel.Email;
+                command.Parameters.Add("@Birtday", SqlDbType.NVarChar).Value = customersModel.Birtday;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(CustomersModel customersModel)
         {
-            throw new NotImplementedException();
+
+            using (var connection = new SqlConnection(connectString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Customers WHERE Customers_id = @Id";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = customersModel.Id;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(CustomersModel customersModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"UPDATE Customers
+                                      SET Customers_LastName =@Lastname
+                                      Customers_FirstName =@Firstname
+                                      Customers_Doc_num  = @Doc_num
+                                      Customers_Address =@Address
+                                      Customers_Phone =@Phone
+                                      Customers_Email = @Email
+                                      Customers_Birtday = @Birtday
+                                      WHERE Customers_Id = @Id"; 
+                command.Parameters.Add("@Lastname", SqlDbType.NVarChar).Value = customersModel.Last_name;
+                command.Parameters.Add("@Firstname", SqlDbType.NVarChar).Value = customersModel.First_name;
+                command.Parameters.Add("@Doc_num", SqlDbType.NVarChar).Value = customersModel.Doc_num;
+                command.Parameters.Add("@Address", SqlDbType.NVarChar).Value = customersModel.Address;
+                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = customersModel.Phone;
+                command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = customersModel.Email;
+                command.Parameters.Add("@Birtday", SqlDbType.NVarChar).Value = customersModel.Birtday;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<CustomersModel> GetAll()
@@ -40,18 +88,18 @@ namespace Supermarket_mvp._repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM Customers ORDER BY Customers DESC";
+                command.CommandText = "SELECT * FROM Customers ORDER BY Customers_Id DESC";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var customersModel = new CustomersModel();
-                        customersModel.Id = (int)reader["Pay_Mode_Id"];
-                        customersModel.Firt_name = reader["Customers_FirtName"].ToString();
+                        customersModel.Id = (int)reader["Customers_Id"];
+                        customersModel.First_name = reader["Customers_FirstName"].ToString();
                         customersModel.Last_name = reader["Customers_LastName"].ToString();
-                        customersModel.Document = reader["Customers_Document"].ToString();
+                        customersModel.Doc_num = reader["Customers_Doc_num"].ToString();
                         customersModel.Address = reader["Customers_Address"].ToString();
-                        customersModel.Bithrday = reader["Customers_Bithrday"].ToString();
+                        customersModel.Birtday = reader["Customers_Birtday"].ToString();
                         customersModel.Email = reader["Customers_Email"].ToString();
                         customersModel.Phone = reader["Customers_Phone"].ToString();
                         customersList.Add(customersModel);
@@ -77,15 +125,13 @@ namespace Supermarket_mvp._repository
                 ORDER By Customers_Id DESC";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customersId;
                 command.Parameters.Add("@Lastname", SqlDbType.NVarChar).Value = customersLastName;
-                command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = customersFirstName;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var customersModel = new CustomersModel();
-                        customersModel.Id = (int)reader["Pay_Mode_Id"];
-                        customersModel.Last_name = reader["Pay_Mode_Name"].ToString();
-                        customersModel.Firt_name = reader["Pay_Mode_Observation"].ToString();
+                        customersModel.Id = (int)reader["Customers_Id"];
+                        customersModel.Last_name = reader["Customers_Lastname"].ToString();
                         customersList.Add(customersModel);
                     }
                 }

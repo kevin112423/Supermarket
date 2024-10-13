@@ -31,12 +31,16 @@ namespace Supermarket_mvp.Presenters
 
             this.view.SetCustomersListBildingSource(CustomersBindingSource);
 
+            LoadAllCustomersList();
+
+            this.view.Show();
             
         }
 
         private void LoadSelectCustomersToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CustomersList = repository.GetAll();
+            CustomersBindingSource.DataSource = CustomersList;
         }
 
         private void SearchCustomers(object? sender, EventArgs e)
@@ -51,7 +55,19 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
+        }
+
+        private void CleanViewFields()
+        {
+            view.CustomersId = "0";
+            view.CustomersFirst_name = "";
+            view.CustomersLast_name = "";
+            view.CustomersDocument = "";
+            view.CustomersAddress = "";
+            view.CustomersPhone = "";
+            view.CustomersBithrday = "";
+            view.CustomersEmail = "";
         }
 
         private void DeleteSelectedCustomers(object? sender, EventArgs e)
@@ -61,12 +77,51 @@ namespace Supermarket_mvp.Presenters
 
         private void SaveCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var customersModel = new CustomersModel();
+            customersModel.Id = Convert.ToInt32(view.CustomersId);
+            customersModel.First_name = view.CustomersFirst_name;
+            customersModel.Last_name = view.CustomersLast_name;
+            customersModel.Doc_num= view.CustomersDocument;
+            customersModel.Address = view.CustomersAddress;
+            customersModel.Birtday = view.CustomersBithrday;
+            customersModel.Phone = view.CustomersPhone;
+            customersModel.Email = view.CustomersEmail;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(customersModel);
+                if (view.IsEdit)
+                {
+                    repository.Edit(customersModel);
+                    view.Message = "PayMode edited succefuly";
+                }
+                else
+                {
+                    repository.Add(customersModel);
+                    view.Message = "PayMode added succefuly";
+                }
+                view.IsSuccessful = true;
+                LoadAllCustomersList();
+                CleanViewFields();
+
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+
+        }
+
+        private void LoadAllCustomersList()
+        {
+            CustomersList = repository.GetAll();
+            CustomersBindingSource.DataSource = CustomersList;
         }
 
         private void AddNewCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
         }
     }
 }

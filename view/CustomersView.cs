@@ -37,7 +37,54 @@ namespace Supermarket_mvp.view
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+            BtnNew.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
 
+                tabControl1.TabPages.Remove(tabProductList);
+                tabControl1.TabPages.Add(tabProductDetail);
+                tabProductDetail.Text = "Add New Pay Mode";
+            };
+
+            BtnEdit.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabProductList);
+                tabControl1.TabPages.Add(tabProductDetail);
+                tabProductDetail.Text = "Edit Pay Mode";
+
+            };
+            BtnDelete.Click += delegate
+            {
+
+                var result = MessageBox.Show("are you sure you want  to delete the selected pay mode",
+                             "Warning",
+                              MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            BtnSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (isSuccessful)
+                {
+                    tabControl1.TabPages.Remove(tabProductList);
+                    tabControl1.TabPages.Add(tabProductDetail);
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(tabProductList);
+                tabControl1.TabPages.Add(tabProductDetail);
+
+            };
         }
 
         public event EventHandler SearchEvent;
@@ -98,7 +145,7 @@ namespace Supermarket_mvp.view
             get { return TxtId.Text; }
             set { TxtId.Text = value; }
         }
-        public string CustomersFirt_name
+        public string CustomersFirst_name
         {
             get { return TxtFirtName.Text; }
             set { TxtFirtName.Text = value; }

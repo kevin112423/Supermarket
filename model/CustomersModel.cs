@@ -16,7 +16,7 @@ namespace Supermarket_mvp.model
         [DisplayName("Product Firt_Name")]
         [Required(ErrorMessage = "Product  firt_name is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
-        public string Firt_name { get; set; }
+        public string First_name { get; set; }
 
         [DisplayName("Product Last_Name")]
         [Required(ErrorMessage = "Product  last_name is required")]
@@ -27,7 +27,7 @@ namespace Supermarket_mvp.model
         [Required(ErrorMessage = "Pay mode name is required")]
         [StringLength(50, MinimumLength = 3,
             ErrorMessage = "Pay mode name must be between 3 and 50 characters")]
-        public string Document { get; set; }
+        public string Doc_num { get; set; }
 
         [DisplayName("Product Address")]
         [Required(ErrorMessage = "Product  address is required")]
@@ -38,9 +38,12 @@ namespace Supermarket_mvp.model
         [Required(ErrorMessage = "Pay mode name is required")]
         [StringLength(50, MinimumLength = 3,
             ErrorMessage = "Pay mode name must be between 3 and 50 characters")]
-        public string Bithrday { get; set; }
+        public string Birtday { get; set; }
 
         [DisplayName("Product Phone")]
+        [Required(ErrorMessage = "Pay mode name is required")]
+        [StringLength(50, MinimumLength = 3,
+            ErrorMessage = "Pay mode name must be between 3 and 50 characters")]
         public string Phone { get; set; }
 
         [DisplayName("Product Email")]
