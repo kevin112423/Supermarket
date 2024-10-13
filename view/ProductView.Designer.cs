@@ -33,33 +33,33 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabCustomersList = new TabPage();
-            tabCustomersDetail = new TabPage();
-            TxtSearch = new TextBox();
-            BrnSearch = new Button();
-            label2 = new Label();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             button5 = new Button();
-            label3 = new Label();
-            TxtId = new TextBox();
-            label4 = new Label();
-            TxtName = new TextBox();
-            label5 = new Label();
-            TxtPrice = new TextBox();
-            label6 = new Label();
-            TxtStaok = new TextBox();
-            TxtCategoria = new TextBox();
-            label7 = new Label();
-            button6 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
+            BrnSearch = new Button();
+            TxtSearch = new TextBox();
+            tabCustomersDetail = new TabPage();
             button7 = new Button();
+            button6 = new Button();
+            label7 = new Label();
+            TxtCategoria = new TextBox();
+            TxtStock = new TextBox();
+            label6 = new Label();
+            TxtPrice = new TextBox();
+            label5 = new Label();
+            TxtName = new TextBox();
+            label4 = new Label();
+            TxtId = new TextBox();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabCustomersList.SuspendLayout();
-            tabCustomersDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabCustomersDetail.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -121,13 +121,82 @@
             tabCustomersList.Text = "Prudoct List";
             tabCustomersList.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            button5.Image = Properties.Resources.cerrar;
+            button5.Location = new Point(600, 264);
+            button5.Name = "button5";
+            button5.Size = new Size(170, 52);
+            button5.TabIndex = 7;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Image = Properties.Resources.delete;
+            button4.Location = new Point(600, 197);
+            button4.Name = "button4";
+            button4.Size = new Size(170, 52);
+            button4.TabIndex = 6;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Image = Properties.Resources.edit;
+            button3.Location = new Point(600, 129);
+            button3.Name = "button3";
+            button3.Size = new Size(170, 52);
+            button3.TabIndex = 5;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Image = Properties.Resources._new;
+            button2.Location = new Point(600, 49);
+            button2.Name = "button2";
+            button2.Size = new Size(170, 52);
+            button2.TabIndex = 4;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(22, 77);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(528, 263);
+            dataGridView1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Product";
+            // 
+            // BrnSearch
+            // 
+            BrnSearch.Image = Properties.Resources.search_small;
+            BrnSearch.Location = new Point(326, 28);
+            BrnSearch.Name = "BrnSearch";
+            BrnSearch.Size = new Size(37, 43);
+            BrnSearch.TabIndex = 1;
+            BrnSearch.UseVisualStyleBackColor = true;
+            // 
+            // TxtSearch
+            // 
+            TxtSearch.Location = new Point(34, 39);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.Size = new Size(286, 23);
+            TxtSearch.TabIndex = 0;
+            // 
             // tabCustomersDetail
             // 
             tabCustomersDetail.Controls.Add(button7);
             tabCustomersDetail.Controls.Add(button6);
             tabCustomersDetail.Controls.Add(label7);
             tabCustomersDetail.Controls.Add(TxtCategoria);
-            tabCustomersDetail.Controls.Add(TxtStaok);
+            tabCustomersDetail.Controls.Add(TxtStock);
             tabCustomersDetail.Controls.Add(label6);
             tabCustomersDetail.Controls.Add(TxtPrice);
             tabCustomersDetail.Controls.Add(label5);
@@ -143,122 +212,46 @@
             tabCustomersDetail.Text = "Product detail";
             tabCustomersDetail.UseVisualStyleBackColor = true;
             // 
-            // TxtSearch
+            // button7
             // 
-            TxtSearch.Location = new Point(34, 39);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.Size = new Size(286, 23);
-            TxtSearch.TabIndex = 0;
+            button7.Image = Properties.Resources.cancel;
+            button7.Location = new Point(417, 260);
+            button7.Name = "button7";
+            button7.Size = new Size(111, 53);
+            button7.TabIndex = 11;
+            button7.UseVisualStyleBackColor = true;
             // 
-            // BrnSearch
+            // button6
             // 
-            BrnSearch.Image = Properties.Resources.search_small;
-            BrnSearch.Location = new Point(326, 28);
-            BrnSearch.Name = "BrnSearch";
-            BrnSearch.Size = new Size(37, 43);
-            BrnSearch.TabIndex = 1;
-            BrnSearch.UseVisualStyleBackColor = true;
+            button6.Image = Properties.Resources.save;
+            button6.Location = new Point(237, 260);
+            button6.Name = "button6";
+            button6.Size = new Size(111, 53);
+            button6.TabIndex = 10;
+            button6.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // label7
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 19);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Product";
+            label7.AutoSize = true;
+            label7.Location = new Point(555, 142);
+            label7.Name = "label7";
+            label7.Size = new Size(103, 15);
+            label7.TabIndex = 9;
+            label7.Text = "Product Categoria";
             // 
-            // dataGridView1
+            // TxtCategoria
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(22, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(528, 263);
-            dataGridView1.TabIndex = 3;
+            TxtCategoria.Location = new Point(555, 160);
+            TxtCategoria.Name = "TxtCategoria";
+            TxtCategoria.Size = new Size(191, 23);
+            TxtCategoria.TabIndex = 8;
             // 
-            // button2
+            // TxtStock
             // 
-            button2.Image = Properties.Resources._new;
-            button2.Location = new Point(600, 49);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 52);
-            button2.TabIndex = 4;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Image = Properties.Resources.edit;
-            button3.Location = new Point(600, 129);
-            button3.Name = "button3";
-            button3.Size = new Size(170, 52);
-            button3.TabIndex = 5;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Image = Properties.Resources.delete;
-            button4.Location = new Point(600, 197);
-            button4.Name = "button4";
-            button4.Size = new Size(170, 52);
-            button4.TabIndex = 6;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Image = Properties.Resources.cerrar;
-            button5.Location = new Point(600, 264);
-            button5.Name = "button5";
-            button5.Size = new Size(170, 52);
-            button5.TabIndex = 7;
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(36, 39);
-            label3.Name = "label3";
-            label3.Size = new Size(62, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Product Id";
-            // 
-            // TxtId
-            // 
-            TxtId.Location = new Point(32, 57);
-            TxtId.Name = "TxtId";
-            TxtId.Size = new Size(191, 23);
-            TxtId.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(287, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(84, 15);
-            label4.TabIndex = 2;
-            label4.Text = "Product Name";
-            // 
-            // TxtName
-            // 
-            TxtName.Location = new Point(287, 57);
-            TxtName.Name = "TxtName";
-            TxtName.Size = new Size(191, 23);
-            TxtName.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(36, 142);
-            label5.Name = "label5";
-            label5.Size = new Size(78, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Product Price";
-            // 
-            // TxtPrice
-            // 
-            TxtPrice.Location = new Point(36, 160);
-            TxtPrice.Name = "TxtPrice";
-            TxtPrice.Size = new Size(191, 23);
-            TxtPrice.TabIndex = 5;
+            TxtStock.Location = new Point(287, 160);
+            TxtStock.Name = "TxtStock";
+            TxtStock.Size = new Size(191, 23);
+            TxtStock.TabIndex = 7;
             // 
             // label6
             // 
@@ -270,46 +263,53 @@
             label6.Text = "Product Stock";
             label6.Click += label6_Click;
             // 
-            // TxtStaok
+            // TxtPrice
             // 
-            TxtStaok.Location = new Point(287, 160);
-            TxtStaok.Name = "TxtStaok";
-            TxtStaok.Size = new Size(191, 23);
-            TxtStaok.TabIndex = 7;
+            TxtPrice.Location = new Point(36, 160);
+            TxtPrice.Name = "TxtPrice";
+            TxtPrice.Size = new Size(191, 23);
+            TxtPrice.TabIndex = 5;
             // 
-            // TxtCategoria
+            // label5
             // 
-            TxtCategoria.Location = new Point(555, 160);
-            TxtCategoria.Name = "TxtCategoria";
-            TxtCategoria.Size = new Size(191, 23);
-            TxtCategoria.TabIndex = 8;
+            label5.AutoSize = true;
+            label5.Location = new Point(36, 142);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 15);
+            label5.TabIndex = 4;
+            label5.Text = "Product Price";
             // 
-            // label7
+            // TxtName
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(555, 142);
-            label7.Name = "label7";
-            label7.Size = new Size(103, 15);
-            label7.TabIndex = 9;
-            label7.Text = "Product Categoria";
+            TxtName.Location = new Point(287, 57);
+            TxtName.Name = "TxtName";
+            TxtName.Size = new Size(191, 23);
+            TxtName.TabIndex = 3;
             // 
-            // button6
+            // label4
             // 
-            button6.Image = Properties.Resources.save;
-            button6.Location = new Point(237, 260);
-            button6.Name = "button6";
-            button6.Size = new Size(111, 53);
-            button6.TabIndex = 10;
-            button6.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(287, 38);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 15);
+            label4.TabIndex = 2;
+            label4.Text = "Product Name";
             // 
-            // button7
+            // TxtId
             // 
-            button7.Image = Properties.Resources.cancel;
-            button7.Location = new Point(417, 260);
-            button7.Name = "button7";
-            button7.Size = new Size(111, 53);
-            button7.TabIndex = 11;
-            button7.UseVisualStyleBackColor = true;
+            TxtId.Location = new Point(32, 57);
+            TxtId.Name = "TxtId";
+            TxtId.Size = new Size(191, 23);
+            TxtId.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(36, 39);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Product Id";
             // 
             // ProductView
             // 
@@ -320,15 +320,16 @@
             Controls.Add(panel1);
             Name = "ProductView";
             Text = "ProductView";
+            Load += ProductView_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             tabCustomersList.ResumeLayout(false);
             tabCustomersList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabCustomersDetail.ResumeLayout(false);
             tabCustomersDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -357,7 +358,7 @@
         private Label label5;
         private Label label7;
         private TextBox TxtCategoria;
-        private TextBox TxtStaok;
+        private TextBox TxtStock;
         private Button button7;
         private Button button6;
     }
