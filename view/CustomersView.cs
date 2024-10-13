@@ -22,6 +22,8 @@ namespace Supermarket_mvp.view
             AssociativeAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabProductDetail);
+
+            BtnCerrar.Click += delegate { this.Close(); };
         }
 
         private void AssociativeAndRaiseViewEvents()
@@ -71,12 +73,12 @@ namespace Supermarket_mvp.view
         }
 
         private static CustomersView instance;
-        public static CustomersView GetInstance()
+        public static CustomersView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new CustomersView();
-                
+                instance.MdiParent = parentContainer;
 
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
@@ -108,8 +110,8 @@ namespace Supermarket_mvp.view
         }
         public string CustomersDocument
         {
-            get { return TxtAddress.Text; }
-            set { TxtAddress.Text = value; }
+            get { return TxtDocumento.Text; }
+            set { TxtDocumento.Text = value; }
         }
         public string CustomersAddress
         {
@@ -118,8 +120,8 @@ namespace Supermarket_mvp.view
         }
         public string CustomersBithrday
         {
-            get { return TxtAddress.Text; }
-            set { TxtAddress.Text = value; }
+            get { return TxtBirthday.Text; }
+            set { TxtBirthday.Text = value; }
         }
         public string CustomersPhone
         {

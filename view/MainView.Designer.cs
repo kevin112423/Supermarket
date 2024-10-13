@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
+            BtnCustomers = new Button();
             BtnNew = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnCustomers = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -49,6 +49,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(183, 564);
             panel1.TabIndex = 0;
+            // 
+            // BtnCustomers
+            // 
+            BtnCustomers.BackgroundImage = (Image)resources.GetObject("BtnCustomers.BackgroundImage");
+            BtnCustomers.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCustomers.Location = new Point(1, 170);
+            BtnCustomers.Name = "BtnCustomers";
+            BtnCustomers.Size = new Size(179, 89);
+            BtnCustomers.TabIndex = 3;
+            BtnCustomers.UseVisualStyleBackColor = true;
+            BtnCustomers.Click += BtnCustomers_Click;
             // 
             // BtnNew
             // 
@@ -82,16 +93,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // BtnCustomers
-            // 
-            BtnCustomers.BackgroundImage = (Image)resources.GetObject("BtnCustomers.BackgroundImage");
-            BtnCustomers.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCustomers.Location = new Point(1, 170);
-            BtnCustomers.Name = "BtnCustomers";
-            BtnCustomers.Size = new Size(179, 89);
-            BtnCustomers.TabIndex = 3;
-            BtnCustomers.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 

@@ -12,6 +12,7 @@ namespace Supermarket_mvp.Presenters
 {
     internal class MainPresenter
     {
+        
         private readonly IMainView mainView;
         private readonly string sqlConnectionString;
 
@@ -27,9 +28,10 @@ namespace Supermarket_mvp.Presenters
         private void ShowCustomersView(object? sender, EventArgs e)
         {
 
-            ICustomersView view =  CustomersView();
+            ICustomersView view = CustomersView.GetInstance((Form)mainView); // Asegúrate de que mainView sea un Form
             ICustomersRepository repository = new CustomersRepository(sqlConnectionString);
             new CustomersPresenter(view, repository);
+           
         }
 
         private void ShowPayModeView(object? sender, EventArgs e)
