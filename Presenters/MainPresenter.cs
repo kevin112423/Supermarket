@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +23,14 @@ namespace Supermarket_mvp.Presenters
 
             this.mainView.ShowPayModeView += ShowPayModeView;
             this.mainView.ShowCustomersView += ShowCustomersView;
+            this.mainView.ShowProductView += ShowProductView;
+        }
+
+        private void ShowProductView(object? sender, EventArgs e)
+        {
+            IProductView view = new ProductView();
+            IProductRepository repository = new ProductRepository(sqlConnectionString);
+            new ProductPresenter(view, repository);
         }
 
         private void ShowCustomersView(object? sender, EventArgs e)

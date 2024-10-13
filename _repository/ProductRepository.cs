@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.Data;
 using System.Data;
-using Supermarket_mvp.model
+using Supermarket_mvp.model;
 
 namespace Supermarket_mvp._repository
 {
@@ -92,4 +92,4 @@ namespace Supermarket_mvp._repository
 
     }
 }
-}
+
