@@ -70,7 +70,27 @@ namespace Supermarket_mvp.view
             dataGridView1.DataSource = CustomersList;
         }
 
+        private static CustomersView instance;
+        public static CustomersView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new CustomersView();
+                
 
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
         public string CustomersId
         {
             get { return TxtId.Text; }

@@ -41,7 +41,7 @@ namespace Supermarket_mvp.model
         public string Bithrday { get; set; }
 
         [DisplayName("Product Phone")]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         [DisplayName("Product Email")]
         [Required(ErrorMessage = "Product  Email is required")]

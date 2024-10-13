@@ -17,6 +17,7 @@ namespace Supermarket_mvp.view
         {
             InitializeComponent();
             BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
+            BtnCustomers.Click += delegate { ShowCustomersView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowPayModeView;
