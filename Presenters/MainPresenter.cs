@@ -28,7 +28,7 @@ namespace Supermarket_mvp.Presenters
 
         private void ShowProductView(object? sender, EventArgs e)
         {
-            IProductView view = new ProductView();
+            IProductView view = ProductView.GetInstance((MainView)mainView);
             IProductRepository repository = new ProductRepository(sqlConnectionString);
             new ProductPresenter(view, repository);
         }

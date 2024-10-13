@@ -22,6 +22,8 @@ namespace Supermarket_mvp.view
             AssociativeAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabCustomersDetail);
+
+            BtnCerrar.Click += delegate { this.Close(); };
         }
 
         private void AssociativeAndRaiseViewEvents()
@@ -34,6 +36,77 @@ namespace Supermarket_mvp.view
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
+            BtnNew.Click += delegate
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(tabCustomersList);
+                tabControl1.TabPages.Add(tabCustomersDetail);
+                tabCustomersDetail.Text = "Add New Pay Mode";
+            };
+
+            BtnEdit.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                tabControl1.TabPages.Remove(tabCustomersList);
+                tabControl1.TabPages.Add(tabCustomersDetail);
+                tabCustomersDetail.Text = "Edit Pay Mode";
+
+            };
+            BtnDelete.Click += delegate
+            {
+
+                var result = MessageBox.Show("are you sure you want  to delete the selected pay mode",
+                             "Warning",
+                              MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+            BtnSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (isSuccessful)
+                {
+                    tabControl1.TabPages.Remove(tabCustomersList);
+                    tabControl1.TabPages.Add(tabCustomersDetail);
+                }
+                MessageBox.Show(Message);
+            };
+            BtnCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(tabCustomersList);
+                tabControl1.TabPages.Add(tabCustomersDetail);
+
+            };
+        }
+        private static ProductView instance;
+
+        public static ProductView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new ProductView();
+                instance.MdiParent = parentContainer;
+
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
         }
 
         public event EventHandler SearchEvent;

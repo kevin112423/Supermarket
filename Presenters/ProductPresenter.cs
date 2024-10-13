@@ -22,32 +22,39 @@ namespace Supermarket_mvp.Presenters
             this.view = view;
             this.repository = repository;
 
-            this.view.AddNewEvent += AddNewCustomers;
-            this.view.SaveEvent += SaveCustomers;
-            this.view.DeleteEvent += DeleteSelectedCustomers;
-            this.view.CancelEvent += CancelCustomers;
-            this.view.EditEvent += LoadSelectCustomersToEdit;
-            this.view.SearchEvent += SearchCustomers;
+            this.view.AddNewEvent += AddNewProduct;
+            this.view.SaveEvent += SaveProduct;
+            this.view.DeleteEvent += DeleteSelectedProduct;
+            this.view.CancelEvent += CancelProduct;
+            this.view.EditEvent += LoadSelectProductToEdit;
+            this.view.SearchEvent += Searchproduct;
 
             this.view.SetProductListBildingSource(ProductBindingSource);
 
-            LoadAllCustomersList();
+            LoadAllProductList();
 
             this.view.Show();
         }
 
-        private void LoadAllCustomersList()
+        private void LoadAllProductList()
         {
             ProductList = repository.GetAll();
             ProductBindingSource.DataSource = ProductList;
         }
 
-        private void LoadSelectCustomersToEdit(object? sender, EventArgs e)
+        private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var product = (ProductModel)ProductBindingSource.Current;
+
+            view.ProductId = product.Id.ToString();
+            view.ProductName = product.Name;
+            view.ProductPrice = product.Price.ToString();
+            view.ProductStock = product.Stock.ToString();
+            view.IsEdit = true;
+
         }
 
-        private void SearchCustomers(object? sender, EventArgs e)
+        private void Searchproduct(object? sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrEmpty(view.SearchValue);
             if (emptyValue == false)
@@ -57,24 +64,51 @@ namespace Supermarket_mvp.Presenters
             ProductBindingSource.DataSource = ProductList;
         }
 
-        private void DeleteSelectedCustomers(object? sender, EventArgs e)
+        private void DeleteSelectedProduct(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void CancelCustomers(object? sender, EventArgs e)
+        private void CancelProduct(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
-        private void SaveCustomers(object? sender, EventArgs e)
+        private void SaveProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var customersModel = new CustomersModel();
+            customersModel.Id = Convert.ToInt32(view.ProductId);
+
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(customersModel);
+                if (view.IsEdit)
+                {
+                    repository.Edit(customersModel);
+                    view.Message = "PayMode edited succefuly";
+                }
+                else
+                {
+                    repository.Add(customersModel);
+                    view.Message = "PayMode added succefuly";
+                }
+                view.IsSuccessful = true;
+                LoadAllCustomersList();
+                CleanViewFields();
+
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+
         }
 
-        private void AddNewCustomers(object? sender, EventArgs e)
+        private void AddNewProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+           view.IsEdit = false;
         }
     }
 }

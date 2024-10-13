@@ -33,17 +33,17 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabCustomersList = new TabPage();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            BtnCerrar = new Button();
+            BtnDelete = new Button();
+            BtnEdit = new Button();
+            BtnNew = new Button();
             dataGridView1 = new DataGridView();
             label2 = new Label();
             BtnSearch = new Button();
             TxtSearch = new TextBox();
             tabCustomersDetail = new TabPage();
-            button7 = new Button();
-            button6 = new Button();
+            BtnCancel = new Button();
+            BtnSave = new Button();
             label7 = new Label();
             TxtCategoria = new TextBox();
             TxtStock = new TextBox();
@@ -105,10 +105,10 @@
             // 
             // tabCustomersList
             // 
-            tabCustomersList.Controls.Add(button5);
-            tabCustomersList.Controls.Add(button4);
-            tabCustomersList.Controls.Add(button3);
-            tabCustomersList.Controls.Add(button2);
+            tabCustomersList.Controls.Add(BtnCerrar);
+            tabCustomersList.Controls.Add(BtnDelete);
+            tabCustomersList.Controls.Add(BtnEdit);
+            tabCustomersList.Controls.Add(BtnNew);
             tabCustomersList.Controls.Add(dataGridView1);
             tabCustomersList.Controls.Add(label2);
             tabCustomersList.Controls.Add(BtnSearch);
@@ -121,41 +121,41 @@
             tabCustomersList.Text = "Prudoct List";
             tabCustomersList.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BtnCerrar
             // 
-            button5.Image = Properties.Resources.cerrar;
-            button5.Location = new Point(600, 264);
-            button5.Name = "button5";
-            button5.Size = new Size(170, 52);
-            button5.TabIndex = 7;
-            button5.UseVisualStyleBackColor = true;
+            BtnCerrar.Image = Properties.Resources.cerrar;
+            BtnCerrar.Location = new Point(600, 264);
+            BtnCerrar.Name = "BtnCerrar";
+            BtnCerrar.Size = new Size(170, 52);
+            BtnCerrar.TabIndex = 7;
+            BtnCerrar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnDelete
             // 
-            button4.Image = Properties.Resources.delete;
-            button4.Location = new Point(600, 197);
-            button4.Name = "button4";
-            button4.Size = new Size(170, 52);
-            button4.TabIndex = 6;
-            button4.UseVisualStyleBackColor = true;
+            BtnDelete.Image = Properties.Resources.delete;
+            BtnDelete.Location = new Point(600, 197);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(170, 52);
+            BtnDelete.TabIndex = 6;
+            BtnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnEdit
             // 
-            button3.Image = Properties.Resources.edit;
-            button3.Location = new Point(600, 129);
-            button3.Name = "button3";
-            button3.Size = new Size(170, 52);
-            button3.TabIndex = 5;
-            button3.UseVisualStyleBackColor = true;
+            BtnEdit.Image = Properties.Resources.edit;
+            BtnEdit.Location = new Point(600, 129);
+            BtnEdit.Name = "BtnEdit";
+            BtnEdit.Size = new Size(170, 52);
+            BtnEdit.TabIndex = 5;
+            BtnEdit.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnNew
             // 
-            button2.Image = Properties.Resources._new;
-            button2.Location = new Point(600, 49);
-            button2.Name = "button2";
-            button2.Size = new Size(170, 52);
-            button2.TabIndex = 4;
-            button2.UseVisualStyleBackColor = true;
+            BtnNew.Image = Properties.Resources._new;
+            BtnNew.Location = new Point(600, 49);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(170, 52);
+            BtnNew.TabIndex = 4;
+            BtnNew.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -192,8 +192,8 @@
             // 
             // tabCustomersDetail
             // 
-            tabCustomersDetail.Controls.Add(button7);
-            tabCustomersDetail.Controls.Add(button6);
+            tabCustomersDetail.Controls.Add(BtnCancel);
+            tabCustomersDetail.Controls.Add(BtnSave);
             tabCustomersDetail.Controls.Add(label7);
             tabCustomersDetail.Controls.Add(TxtCategoria);
             tabCustomersDetail.Controls.Add(TxtStock);
@@ -212,23 +212,23 @@
             tabCustomersDetail.Text = "Product detail";
             tabCustomersDetail.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // BtnCancel
             // 
-            button7.Image = Properties.Resources.cancel;
-            button7.Location = new Point(417, 260);
-            button7.Name = "button7";
-            button7.Size = new Size(111, 53);
-            button7.TabIndex = 11;
-            button7.UseVisualStyleBackColor = true;
+            BtnCancel.Image = Properties.Resources.cancel;
+            BtnCancel.Location = new Point(417, 260);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(111, 53);
+            BtnCancel.TabIndex = 11;
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtnSave
             // 
-            button6.Image = Properties.Resources.save;
-            button6.Location = new Point(237, 260);
-            button6.Name = "button6";
-            button6.Size = new Size(111, 53);
-            button6.TabIndex = 10;
-            button6.UseVisualStyleBackColor = true;
+            BtnSave.Image = Properties.Resources.save;
+            BtnSave.Location = new Point(237, 260);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(111, 53);
+            BtnSave.TabIndex = 10;
+            BtnSave.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -344,10 +344,10 @@
         private Label label2;
         private Button BtnSearch;
         private TextBox TxtSearch;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button BtnCerrar;
+        private Button BtnDelete;
+        private Button BtnEdit;
+        private Button BtnNew;
         private DataGridView dataGridView1;
         private TextBox TxtName;
         private Label label4;
@@ -359,7 +359,7 @@
         private Label label7;
         private TextBox TxtCategoria;
         private TextBox TxtStock;
-        private Button button7;
-        private Button button6;
+        private Button BtnCancel;
+        private Button BtnSave;
     }
 }
