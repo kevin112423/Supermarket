@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Supermarket_mvp.view
 {
-    internal interface IProductView
+    internal interface ICustomersView
     {
-        string ProductId { get; set; }
-        string ProductFirt_name { get; set; }
-        string ProductLast_name { get; set; }
-        string ProductAddress { get; set; }
-        string ProductPhone { get; set; }
-        string ProductEmail { get; set; }
+        string CustomersId { get; set; }
+        string CustomersFirt_name { get; set; }
+        string CustomersLast_name { get; set; }
+        string CustomersDocument { get; set; }
+        string CustomersAddress { get; set; }
+        string CustomersBithrday{ get; set; }
+        string CustomersPhone { get; set; }
+        string CustomersEmail { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -27,7 +29,7 @@ namespace Supermarket_mvp.view
         event EventHandler CancelEvent;
         event EventHandler EditEvent;
 
-        void SetPayModeListBildingSource(BindingSource ProductList);
+        void SetCustomersListBildingSource(BindingSource CustomersList);
 
         void Show();
     }
