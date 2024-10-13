@@ -44,8 +44,6 @@
             tabCustomersDetail = new TabPage();
             BtnCancel = new Button();
             BtnSave = new Button();
-            label7 = new Label();
-            TxtCategoria = new TextBox();
             TxtStock = new TextBox();
             label6 = new Label();
             TxtPrice = new TextBox();
@@ -194,8 +192,6 @@
             // 
             tabCustomersDetail.Controls.Add(BtnCancel);
             tabCustomersDetail.Controls.Add(BtnSave);
-            tabCustomersDetail.Controls.Add(label7);
-            tabCustomersDetail.Controls.Add(TxtCategoria);
             tabCustomersDetail.Controls.Add(TxtStock);
             tabCustomersDetail.Controls.Add(label6);
             tabCustomersDetail.Controls.Add(TxtPrice);
@@ -215,7 +211,7 @@
             // BtnCancel
             // 
             BtnCancel.Image = Properties.Resources.cancel;
-            BtnCancel.Location = new Point(417, 260);
+            BtnCancel.Location = new Point(618, 41);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(111, 53);
             BtnCancel.TabIndex = 11;
@@ -224,27 +220,11 @@
             // BtnSave
             // 
             BtnSave.Image = Properties.Resources.save;
-            BtnSave.Location = new Point(237, 260);
+            BtnSave.Location = new Point(618, 130);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(111, 53);
             BtnSave.TabIndex = 10;
             BtnSave.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(555, 142);
-            label7.Name = "label7";
-            label7.Size = new Size(103, 15);
-            label7.TabIndex = 9;
-            label7.Text = "Product Categoria";
-            // 
-            // TxtCategoria
-            // 
-            TxtCategoria.Location = new Point(555, 160);
-            TxtCategoria.Name = "TxtCategoria";
-            TxtCategoria.Size = new Size(191, 23);
-            TxtCategoria.TabIndex = 8;
             // 
             // TxtStock
             // 
@@ -356,8 +336,6 @@
         private Label label6;
         private TextBox TxtPrice;
         private Label label5;
-        private Label label7;
-        private TextBox TxtCategoria;
         private TextBox TxtStock;
         private Button BtnCancel;
         private Button BtnSave;

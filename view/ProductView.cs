@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.view
 {
-    public partial class ProductView : Form,IProductView
+    public partial class ProductView : Form, IProductView
     {
         private bool isSuccessful;
         private bool isEdit;
@@ -71,8 +71,8 @@ namespace Supermarket_mvp.view
 
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabCustomersList);
-                    tabControl1.TabPages.Add(tabCustomersDetail);
+                    tabControl1.TabPages.Remove(tabCustomersDetail);
+                    tabControl1.TabPages.Add(tabCustomersList);
                 }
                 MessageBox.Show(Message);
             };
@@ -80,8 +80,8 @@ namespace Supermarket_mvp.view
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
 
-                tabControl1.TabPages.Remove(tabCustomersList);
-                tabControl1.TabPages.Add(tabCustomersDetail);
+                tabControl1.TabPages.Remove(tabCustomersDetail);
+                tabControl1.TabPages.Add(tabCustomersList);
 
             };
         }
@@ -166,13 +166,18 @@ namespace Supermarket_mvp.view
 
         }
 
-       
+
         private void label6_Click(object sender, EventArgs e)
         {
 
         }
 
         private void ProductView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCategoria_TextChanged(object sender, EventArgs e)
         {
 
         }

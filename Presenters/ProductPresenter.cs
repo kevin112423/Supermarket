@@ -66,35 +66,51 @@ namespace Supermarket_mvp.Presenters
 
         private void DeleteSelectedProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var product = (ProductModel)ProductBindingSource.Current;
+
+                repository.Delete(product.Id);
+                view.IsSuccessful = true;
+                view.Message = "Product deleted successfuly";
+                LoadAllProductList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete product";
+            }
+
         }
 
         private void CancelProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
         private void SaveProduct(object? sender, EventArgs e)
         {
-            var customersModel = new CustomersModel();
-            customersModel.Id = Convert.ToInt32(view.ProductId);
-
+            var productModel = new ProductModel();
+            productModel.Id = Convert.ToInt32(view.ProductId);
+            productModel.Name = view.ProductName;
+            productModel.Price = Convert.ToDecimal(view.ProductPrice);
+            productModel.Stock = Convert.ToInt32(view.ProductStock);
 
             try
             {
-                new Common.ModelDataValidation().Validate(customersModel);
+                new Common.ModelDataValidation().Validate(productModel);
                 if (view.IsEdit)
                 {
-                    repository.Edit(customersModel);
+                    repository.Edit(productModel);
                     view.Message = "PayMode edited succefuly";
                 }
                 else
                 {
-                    repository.Add(customersModel);
+                    repository.Add(productModel);
                     view.Message = "PayMode added succefuly";
                 }
                 view.IsSuccessful = true;
-                LoadAllCustomersList();
+                LoadAllProductList();
                 CleanViewFields();
 
             }
@@ -104,6 +120,14 @@ namespace Supermarket_mvp.Presenters
                 view.Message = ex.Message;
             }
 
+        }
+
+        private void CleanViewFields()
+        {
+            view.ProductId = "0";
+            view.ProductName = "";
+            view.ProductPrice = "0";
+            view.ProductStock = "0";
         }
 
         private void AddNewProduct(object? sender, EventArgs e)

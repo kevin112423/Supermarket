@@ -70,17 +70,17 @@ namespace Supermarket_mvp.view
 
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(PagePayModeList);
-                    tabControl1.TabPages.Add(PagePayModeDetail);
+                    tabControl1.TabPages.Remove(PagePayModeDetail);
+                    tabControl1.TabPages.Add(PagePayModeList);
                 }
                 MessageBox.Show(Message);
-            };
-            BtnCancel.Click += delegate
+            };            BtnCancel.Click += delegate
+
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
 
-                tabControl1.TabPages.Remove(PagePayModeList);
-                tabControl1.TabPages.Add(PagePayModeDetail);
+                tabControl1.TabPages.Remove(PagePayModeDetail);
+                tabControl1.TabPages.Add(PagePayModeList);
 
             };
         }
