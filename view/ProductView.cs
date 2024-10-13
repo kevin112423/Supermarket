@@ -14,10 +14,26 @@ namespace Supermarket_mvp.view
     {
         private bool isSuccessful;
         private bool isEdit;
+        private string message;
 
         public ProductView()
         {
             InitializeComponent();
+            AssociativeAndRaiseViewEvents();
+
+            tabControl1.TabPages.Remove(tabCustomersDetail);
+        }
+
+        private void AssociativeAndRaiseViewEvents()
+        {
+            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            TxtSearch.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
         }
 
         public event EventHandler SearchEvent;
@@ -37,6 +53,11 @@ namespace Supermarket_mvp.view
             get { return TxtId.Text; }
             set { TxtId.Text = value; }
         }
+        public string ProductName
+        {
+            get { return TxtName.Text; }
+            set { TxtName.Text = value; }
+        }
         public string ProductPrice
         {
             get { return TxtPrice.Text; }
@@ -44,13 +65,8 @@ namespace Supermarket_mvp.view
         }
         public string ProductStock
         {
-            get { return Txt.Text; }
-            set { TxtSearch.Text = value; }
-        }
-        public string ProductCategoria
-        {
-            get { return TxtSearch.Text; }
-            set { TxtSearch.Text = value; }
+            get { return TxtStock.Text; }
+            set { TxtStock.Text = value; }
         }
         public string SearchValue
         {
@@ -77,8 +93,7 @@ namespace Supermarket_mvp.view
 
         }
 
-        public string message { get; private set; }
-
+       
         private void label6_Click(object sender, EventArgs e)
         {
 

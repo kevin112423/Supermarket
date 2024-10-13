@@ -39,7 +39,7 @@
             button2 = new Button();
             dataGridView1 = new DataGridView();
             label2 = new Label();
-            BrnSearch = new Button();
+            BtnSearch = new Button();
             TxtSearch = new TextBox();
             tabCustomersDetail = new TabPage();
             button7 = new Button();
@@ -111,7 +111,7 @@
             tabCustomersList.Controls.Add(button2);
             tabCustomersList.Controls.Add(dataGridView1);
             tabCustomersList.Controls.Add(label2);
-            tabCustomersList.Controls.Add(BrnSearch);
+            tabCustomersList.Controls.Add(BtnSearch);
             tabCustomersList.Controls.Add(TxtSearch);
             tabCustomersList.Location = new Point(4, 24);
             tabCustomersList.Name = "tabCustomersList";
@@ -174,14 +174,14 @@
             label2.TabIndex = 2;
             label2.Text = "Product";
             // 
-            // BrnSearch
+            // BtnSearch
             // 
-            BrnSearch.Image = Properties.Resources.search_small;
-            BrnSearch.Location = new Point(326, 28);
-            BrnSearch.Name = "BrnSearch";
-            BrnSearch.Size = new Size(37, 43);
-            BrnSearch.TabIndex = 1;
-            BrnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Image = Properties.Resources.search_small;
+            BtnSearch.Location = new Point(326, 28);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(37, 43);
+            BtnSearch.TabIndex = 1;
+            BtnSearch.UseVisualStyleBackColor = true;
             // 
             // TxtSearch
             // 
@@ -342,7 +342,7 @@
         private TabPage tabCustomersList;
         private TabPage tabCustomersDetail;
         private Label label2;
-        private Button BrnSearch;
+        private Button BtnSearch;
         private TextBox TxtSearch;
         private Button button5;
         private Button button4;

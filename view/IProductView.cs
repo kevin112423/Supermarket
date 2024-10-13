@@ -15,7 +15,7 @@ namespace Supermarket_mvp.view
 
         public string ProductStock { get; set; }
 
-        public string ProductCategoria { get; set; }
+
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }

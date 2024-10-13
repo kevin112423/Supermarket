@@ -20,18 +20,10 @@ namespace Supermarket_mvp.model
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
         public string Name { get; set; }
         [DisplayName("Customers Firt_Name")]
-        [Required(ErrorMessage = "Product  firt_name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
         [DisplayName("Customers Firt_Name")]
-        [Required(ErrorMessage = "Product  firt_name is required")]
-        [StringLength(1000000000, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
+        public int  Stock{ get; set; }
 
-        public string Stock{ get; set; }
-        [DisplayName("Customers Firt_Name")]
-        [Required(ErrorMessage = "Product  firt_name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
-        public string Categoria {  get; set; }
 
     }
 }
