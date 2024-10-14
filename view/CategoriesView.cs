@@ -22,6 +22,7 @@ namespace Supermarket_mvp.view
             AssociativeAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabCategoriesDetail);
+            BtnCerrar.Click += delegate { this.Close(); };
         }
 
         private void AssociativeAndRaiseViewEvents()
@@ -52,7 +53,28 @@ namespace Supermarket_mvp.view
             BtnCerrar.Click += delegate { this.Close(); };
 
         }
+        private static CategoriesView instance;
 
+        public static CategoriesView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new CategoriesView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
         public string CategoriesId
         {
             get { return TxtId.Text; }

@@ -29,7 +29,7 @@ namespace Supermarket_mvp.Presenters
 
         private void ShowCategoriesView(object? sender, EventArgs e)
         {
-            ICategoriesView view = new CategoriesView();
+            ICategoriesView view = CategoriesView.GetInstance((MainView)mainView);
             ICategoriesRepository repository = new CategoriesRepository(sqlConnectionString);
             new CategoriesPresenter(view, repository);  
         }
