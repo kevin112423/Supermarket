@@ -13,15 +13,15 @@ namespace Supermarket_mvp.model
 {
     internal class ProductModel
     {
-        [DisplayName("Customers Id")]
+        [DisplayName("Product Id")]
         public int Id { get; set; }
-        [DisplayName("Customers Firt_Name")]
+        [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product  firt_name is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Product  name the must  be between 3 and 50  characters ")]
         public string Name { get; set; }
-        [DisplayName("Customers Firt_Name")]
+        [DisplayName("Product Price")]
         public decimal Price { get; set; }
-        [DisplayName("Customers Firt_Name")]
+        [DisplayName("Product Stock")]
         public int  Stock{ get; set; }
 
 
