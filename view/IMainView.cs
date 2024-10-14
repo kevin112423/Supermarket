@@ -11,5 +11,6 @@ namespace Supermarket_mvp.view
         event EventHandler ShowPayModeView;
         event EventHandler ShowProductView;
         event EventHandler ShowCustomersView;
+        event EventHandler ShowCategoriesView;
     }
 }

@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
+            BtnCategories = new Button();
+            BtnProduct = new Button();
             BtnCustomers = new Button();
-            BtnNew = new Button();
+            BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnProduct = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnCategories);
             panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnCustomers);
-            panel1.Controls.Add(BtnNew);
+            panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(BtnPayMode);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
@@ -51,6 +53,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(183, 564);
             panel1.TabIndex = 0;
+            // 
+            // BtnCategories
+            // 
+            BtnCategories.BackgroundImage = Properties.Resources.categoria;
+            BtnCategories.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCategories.Location = new Point(0, 360);
+            BtnCategories.Name = "BtnCategories";
+            BtnCategories.Size = new Size(179, 102);
+            BtnCategories.TabIndex = 5;
+            BtnCategories.UseVisualStyleBackColor = true;
+            // 
+            // BtnProduct
+            // 
+            BtnProduct.BackgroundImage = Properties.Resources.agregar_producto;
+            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProduct.Location = new Point(0, 265);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(179, 89);
+            BtnProduct.TabIndex = 4;
+            BtnProduct.UseVisualStyleBackColor = true;
+            BtnProduct.Click += button1_Click;
             // 
             // BtnCustomers
             // 
@@ -63,17 +86,17 @@
             BtnCustomers.UseVisualStyleBackColor = true;
             BtnCustomers.Click += BtnCustomers_Click;
             // 
-            // BtnNew
+            // BtnExit
             // 
-            BtnNew.BackgroundImage = Properties.Resources.cerrar_con_llave;
-            BtnNew.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnNew.Dock = DockStyle.Bottom;
-            BtnNew.Location = new Point(0, 486);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(183, 78);
-            BtnNew.TabIndex = 2;
-            BtnNew.UseVisualStyleBackColor = true;
-            BtnNew.Click += BtnNew_Click;
+            BtnExit.BackgroundImage = Properties.Resources.cerrar_con_llave;
+            BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnExit.Dock = DockStyle.Bottom;
+            BtnExit.Location = new Point(0, 486);
+            BtnExit.Name = "BtnExit";
+            BtnExit.Size = new Size(183, 78);
+            BtnExit.TabIndex = 2;
+            BtnExit.UseVisualStyleBackColor = true;
+            BtnExit.Click += BtnNew_Click;
             // 
             // BtnPayMode
             // 
@@ -96,17 +119,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // BtnProduct
-            // 
-            BtnProduct.BackgroundImage = Properties.Resources.agregar_producto;
-            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProduct.Location = new Point(0, 265);
-            BtnProduct.Name = "BtnProduct";
-            BtnProduct.Size = new Size(179, 89);
-            BtnProduct.TabIndex = 4;
-            BtnProduct.UseVisualStyleBackColor = true;
-            BtnProduct.Click += button1_Click;
-            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -128,8 +140,9 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button BtnPayMode;
-        private Button BtnNew;
+        private Button BtnExit;
         private Button BtnCustomers;
         private Button BtnProduct;
+        private Button BtnCategories;
     }
 }
