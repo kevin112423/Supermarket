@@ -8,7 +8,7 @@ namespace Supermarket_mvp.view
 {
     internal interface ICategoriesView
     {
-        int CategoriesId { get; set; }
+        string CategoriesId { get; set; }
         string CategoriesName { get; set; }
         string CategoriesDescription { get; set; }
 
@@ -24,7 +24,7 @@ namespace Supermarket_mvp.view
         event EventHandler CancelEvent;
         event EventHandler EditEvent;
 
-        void SetProductListBildingSource(BindingSource CategoriesList);
+        void SetCategoriesListBildingSource(BindingSource CategoriesList);
 
         void Show();
     }
