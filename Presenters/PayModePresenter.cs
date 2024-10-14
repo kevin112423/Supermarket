@@ -68,7 +68,20 @@ namespace Supermarket_mvp.Presenters
 
         private void DeleteSelectedPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var paymode = (PayModeModel)PayModeBindingSource.Current;
+
+                repository.Delete(paymode.Id);
+                view.IsSuccessful = true;
+                view.Message = "Customers deleted successfuly";
+                LoadAllPayModeList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete Customers";
+            }
         }
 
         private void SavePaymode(object? sender, EventArgs e)

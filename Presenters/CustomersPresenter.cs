@@ -72,7 +72,20 @@ namespace Supermarket_mvp.Presenters
 
         private void DeleteSelectedCustomers(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var customers = (CustomersModel)CustomersBindingSource.Current;
+
+                repository.Delete(customers.Id);
+                view.IsSuccessful = true;
+                view.Message = "Customers deleted successfuly";
+                LoadAllCustomersList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete Customers";
+            }
         }
 
         private void SaveCustomers(object? sender, EventArgs e)

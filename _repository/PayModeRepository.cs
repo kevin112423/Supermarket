@@ -28,17 +28,16 @@ namespace Supermarket_mvp._repository
                 command.ExecuteNonQuery();
             }
         }
-
-        public void Delete(PayModeModel payModeModel)
+        public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO PayMode WHERE Pay_Mode_id = @Id";
-                command.Parameters.Add("@Id", SqlDbType.Int).Value = payModeModel.Id;
-     
+                command.CommandText = "DELETE FROM PayMode WHERE Pay_Mode_Id = @Id";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
                 command.ExecuteNonQuery();
             }
         }

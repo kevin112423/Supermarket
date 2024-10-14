@@ -10,7 +10,7 @@ namespace Supermarket_mvp.model
     {
         void Add(CustomersModel customersModel);
         void Edit(CustomersModel customersModel);
-        void Delete(CustomersModel customersModel);
+        void Delete(int id);
 
         IEnumerable<CustomersModel> GetAll();
         IEnumerable<CustomersModel> GetByValue(String value);

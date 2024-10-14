@@ -62,9 +62,10 @@
             // 
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-2, 1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(986, 100);
+            panel1.Size = new Size(996, 100);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -90,10 +91,11 @@
             // 
             tabControl1.Controls.Add(PagePayModeList);
             tabControl1.Controls.Add(PagePayModeDetail);
-            tabControl1.Location = new Point(12, 120);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Location = new Point(0, 100);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(972, 404);
+            tabControl1.Size = new Size(996, 441);
             tabControl1.TabIndex = 1;
             // 
             // PagePayModeList
@@ -109,7 +111,7 @@
             PagePayModeList.Location = new Point(4, 24);
             PagePayModeList.Name = "PagePayModeList";
             PagePayModeList.Padding = new Padding(3);
-            PagePayModeList.Size = new Size(964, 376);
+            PagePayModeList.Size = new Size(988, 413);
             PagePayModeList.TabIndex = 0;
             PagePayModeList.Text = " Pay Mode List";
             PagePayModeList.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@
             // 
             BtnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnCerrar.Image = Properties.Resources.cerrar;
-            BtnCerrar.Location = new Point(765, 241);
+            BtnCerrar.Location = new Point(605, 257);
             BtnCerrar.Name = "BtnCerrar";
             BtnCerrar.Size = new Size(147, 50);
             BtnCerrar.TabIndex = 7;
@@ -130,7 +132,7 @@
             // 
             BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(765, 103);
+            BtnEdit.Location = new Point(605, 145);
             BtnEdit.Name = "BtnEdit";
             BtnEdit.Size = new Size(147, 50);
             BtnEdit.TabIndex = 6;
@@ -140,7 +142,7 @@
             // 
             BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(765, 172);
+            BtnDelete.Location = new Point(605, 201);
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(147, 50);
             BtnDelete.TabIndex = 5;
@@ -150,7 +152,7 @@
             // 
             BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(765, 30);
+            BtnNew.Location = new Point(605, 79);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(147, 50);
             BtnNew.TabIndex = 4;
@@ -163,7 +165,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(23, 79);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(672, 252);
+            dataGridView1.Size = new Size(540, 289);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -206,7 +208,7 @@
             PagePayModeDetail.Location = new Point(4, 24);
             PagePayModeDetail.Name = "PagePayModeDetail";
             PagePayModeDetail.Padding = new Padding(3);
-            PagePayModeDetail.Size = new Size(964, 376);
+            PagePayModeDetail.Size = new Size(988, 413);
             PagePayModeDetail.TabIndex = 1;
             PagePayModeDetail.Text = " Pay Mode Detail";
             PagePayModeDetail.UseVisualStyleBackColor = true;
@@ -287,7 +289,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(996, 522);
+            ClientSize = new Size(996, 541);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "PayModeView";

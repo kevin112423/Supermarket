@@ -65,7 +65,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 112);
+            panel1.Size = new Size(1145, 112);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -96,7 +96,7 @@
             tabControl1.Location = new Point(0, 112);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 378);
+            tabControl1.Size = new Size(1145, 378);
             tabControl1.TabIndex = 1;
             // 
             // tabCategoriesList
@@ -112,7 +112,7 @@
             tabCategoriesList.Location = new Point(4, 24);
             tabCategoriesList.Name = "tabCategoriesList";
             tabCategoriesList.Padding = new Padding(3);
-            tabCategoriesList.Size = new Size(792, 350);
+            tabCategoriesList.Size = new Size(1137, 350);
             tabCategoriesList.TabIndex = 0;
             tabCategoriesList.Text = " Categories List";
             tabCategoriesList.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             // BtnCerrar
             // 
             BtnCerrar.Image = Properties.Resources.cerrar;
-            BtnCerrar.Location = new Point(594, 217);
+            BtnCerrar.Location = new Point(950, 235);
             BtnCerrar.Name = "BtnCerrar";
             BtnCerrar.Size = new Size(165, 49);
             BtnCerrar.TabIndex = 7;
@@ -129,7 +129,7 @@
             // BtnDelete
             // 
             BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(594, 162);
+            BtnDelete.Location = new Point(950, 171);
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(165, 49);
             BtnDelete.TabIndex = 6;
@@ -138,7 +138,7 @@
             // BtnEdit
             // 
             BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(594, 107);
+            BtnEdit.Location = new Point(950, 116);
             BtnEdit.Name = "BtnEdit";
             BtnEdit.Size = new Size(165, 49);
             BtnEdit.TabIndex = 5;
@@ -147,7 +147,7 @@
             // BtnNew
             // 
             BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(594, 52);
+            BtnNew.Location = new Point(950, 61);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(165, 49);
             BtnNew.TabIndex = 4;
@@ -155,10 +155,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(13, 91);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(522, 251);
+            dataGridView1.Size = new Size(867, 251);
             dataGridView1.TabIndex = 3;
             // 
             // label2
@@ -199,7 +201,7 @@
             tabCategoriesDetail.Location = new Point(4, 24);
             tabCategoriesDetail.Name = "tabCategoriesDetail";
             tabCategoriesDetail.Padding = new Padding(3);
-            tabCategoriesDetail.Size = new Size(792, 350);
+            tabCategoriesDetail.Size = new Size(984, 350);
             tabCategoriesDetail.TabIndex = 1;
             tabCategoriesDetail.Text = "Categories Detail";
             tabCategoriesDetail.UseVisualStyleBackColor = true;
@@ -275,7 +277,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 490);
+            ClientSize = new Size(1145, 490);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "CategoriesView";

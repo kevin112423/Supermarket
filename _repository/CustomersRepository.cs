@@ -37,7 +37,8 @@ namespace Supermarket_mvp._repository
             }
         }
 
-        public void Delete(CustomersModel customersModel)
+  
+        public void Delete(int id)
         {
 
             using (var connection = new SqlConnection(connectString))
@@ -45,8 +46,8 @@ namespace Supermarket_mvp._repository
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Customers WHERE Customers_id = @Id";
-                command.Parameters.Add("@Id", SqlDbType.Int).Value = customersModel.Id;
+                command.CommandText = "DELETE FROM Customers WHERE Customers_Id = @Id";
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = id;
 
                 command.ExecuteNonQuery();
             }
